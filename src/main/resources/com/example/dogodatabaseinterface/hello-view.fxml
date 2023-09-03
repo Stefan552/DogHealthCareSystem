@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="424.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dogodatabaseinterface.HelloController">
+<AnchorPane prefHeight="424.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dogodatabaseinterface.Controller">
    <children>
       <Pane prefHeight="259.0" prefWidth="314.0" style="-fx-opacity: 2.8;">
          <effect>

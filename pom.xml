@@ -129,7 +129,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.dogodatabaseinterface/com.example.dogodatabaseinterface.HelloApplication
+                                com.example.dogodatabaseinterface/com.example.dogodatabaseinterface.DogHealthApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
