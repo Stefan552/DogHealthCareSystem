@@ -8,16 +8,22 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DogHealthApplication extends Application {
+
+
+
     @Override
     public void start ( Stage stage ) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader ( DogHealthApplication.class.getResource ( "hello-view.fxml" ) );
+        FXMLLoader fxmlLoader = new FXMLLoader ( DogHealthApplication.class.getResource ( "loginInterface.fxml" ) );
         Scene scene = new Scene ( fxmlLoader.load ()  );
-        stage.setTitle ( "DogoDatabase" );
+        stage.setTitle ( "DogDatabaseLoginPage" );
         stage.setScene ( scene );
         stage.show ();
     }
 
+
     public static void main ( String[] args ) {
-        launch ();
+        launch (  );
+
+
     }
 }
