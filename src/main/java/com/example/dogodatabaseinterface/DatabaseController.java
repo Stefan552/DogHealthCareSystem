@@ -149,7 +149,7 @@ public class DatabaseController {
         }
     }
     @FXML
-    private void loginButtonClicked(ActionEvent event) throws IOException {
+    private void logOutButtonClicked(ActionEvent event) throws IOException {
         switchToLoginInterface ( event );
     }
 
