@@ -22,9 +22,9 @@
       <TextArea fx:id="firstName" focusTraversable="false" layoutX="70.0" layoutY="23.0" prefHeight="26.0" prefWidth="254.0" promptText="First Name" />
       <TextArea fx:id="lastName" focusTraversable="false" layoutX="71.0" layoutY="80.0" prefHeight="26.0" prefWidth="254.0" promptText="Last Name" />
       <Button layoutX="71.0" layoutY="573.0" mnemonicParsing="false" onAction="#searchClients" prefHeight="29.0" prefWidth="83.0" text="Search" />
-      <Button layoutX="324.0" layoutY="573.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="83.0" text="Log Out" />
+      <Button layoutX="324.0" layoutY="573.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="29.0" prefWidth="83.0" text="Log Out" />
       <Button layoutX="198.0" layoutY="573.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="83.0" text="Add Pet" />
-      <TextArea fx:id="resultArea" layoutX="71.0" layoutY="131.0" prefHeight="230.0" prefWidth="254.0">
+      <TextArea fx:id="resultArea" layoutX="71.0" layoutY="131.0" prefHeight="242.0" prefWidth="254.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></TextArea>

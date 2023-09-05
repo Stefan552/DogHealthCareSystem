@@ -1,11 +1,18 @@
 package com.example.dogodatabaseinterface;
 
 import javafx.animation.PauseTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -34,11 +41,19 @@ public class DatabaseController {
     private TextArea breed;
 
     @FXML
+    private TextArea vaccinated;
+    @FXML
+    private TextArea age;
+
+    @FXML
+    private TextArea vetPoint;
+    @FXML
     private TextArea resultArea;
     @FXML
     private Text text;
-
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
 
     public void searchClients() {
@@ -77,6 +92,9 @@ public class DatabaseController {
                 String city = resultSet.getString("city");
                 String petName = resultSet.getString("petName");
                 String breed = resultSet.getString("breed");
+                String vaccinated=resultSet.getString ( "vaccinated" );
+                String age=resultSet.getString ( "age");
+                String vetPoint=resultSet.getString ( "veterinary_healthpoint" );
 
 
                 resultBuilder.append("Client ").append("\n");
@@ -87,6 +105,9 @@ public class DatabaseController {
                 resultBuilder.append("City: ").append(city).append("\n");
                 resultBuilder.append("Pet Name: ").append(petName).append("\n");
                 resultBuilder.append("Breed: ").append(breed).append("\n");
+                resultBuilder.append ( "Vaccinated with VCAN1015: " ).append ( vaccinated ).append("\n");
+                resultBuilder.append ( "Age: " ).append ( age ).append("\n");
+                resultBuilder.append ( "Treated at: " ).append ( vetPoint ).append("\n");
 
             }
 
@@ -127,6 +148,19 @@ public class DatabaseController {
             }
         }
     }
+    @FXML
+    private void loginButtonClicked(ActionEvent event) throws IOException {
+        switchToLoginInterface ( event );
+    }
 
+    private void switchToLoginInterface( ActionEvent event) throws IOException {
+        root = FXMLLoader.load ( getClass ().getResource ( "loginInterface.fxml" ) );
+        stage = (Stage) ((Node) event.getSource ()).getScene ().getWindow ();
+        stage.setResizable ( false );
+        scene = new Scene ( root );
+        stage.setScene ( scene );
+        stage.centerOnScreen ();
+        stage.show ();
 
+    }
 }

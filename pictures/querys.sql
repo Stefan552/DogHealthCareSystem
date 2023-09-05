@@ -20,3 +20,8 @@ INSERT INTO users (username, password) VALUES
 
 select* from clients ;
  
+ 
+ ALTER TABLE Clients
+ADD vaccinated varchar(15),
+ADD age INT,
+ADD veterinary_healthpoint VARCHAR(255);
