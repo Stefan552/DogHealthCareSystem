@@ -16,6 +16,8 @@ public class DogHealthApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader ( DogHealthApplication.class.getResource ( "loginInterface.fxml" ) );
         Scene scene = new Scene ( fxmlLoader.load ()  );
         stage.setTitle ( "DogDatabaseLoginPage" );
+        stage.setResizable ( false );
+        stage.centerOnScreen ();
         stage.setScene ( scene );
         stage.show ();
     }

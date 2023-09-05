@@ -103,10 +103,14 @@ public class LoginController  {
     private void switchToDtabaseInterface(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("databaseInterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setResizable ( false );
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.centerOnScreen ();
         stage.show();
     }
+
+    // TODO: 04.09.2023  
     @FXML
     private void signupButtonClicked(ActionEvent event) {
         // Implement your signup logic here
