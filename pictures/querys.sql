@@ -18,5 +18,5 @@ INSERT INTO users (username, password) VALUES
 INSERT INTO users (username, password) VALUES
 ('user3', 'password3');
 
-select* from users ;
+select* from clients ;
  
