@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dogodatabaseinterface.AddPetController">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="38.0" prefWidth="39.0">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="file:/C:/Users/kovac/Downloads/image-950x670.jpg" />
+               </source>
+            </ImageInput>
+         </effect>
+      </AnchorPane>
+      <TextArea fx:id="firstName" focusTraversable="false" layoutX="39.0" layoutY="35.0" prefHeight="38.0" prefWidth="254.0" promptText="First Name" />
+      <TextArea fx:id="lastName" focusTraversable="false" layoutX="39.0" layoutY="83.0" prefHeight="38.0" prefWidth="254.0" promptText="Last Name" />
+      <TextArea fx:id="city" focusTraversable="false" layoutX="39.0" layoutY="179.0" prefHeight="38.0" prefWidth="254.0" promptText="City" />
+      <TextArea fx:id="phoneNumber" focusTraversable="false" layoutX="39.0" layoutY="131.0" prefHeight="38.0" prefWidth="254.0" promptText="Phone Number (987-654-3210)" />
+      <TextArea fx:id="petName" focusTraversable="false" layoutX="39.0" layoutY="227.0" prefHeight="38.0" prefWidth="254.0" promptText="Pet's Name" />
+      <TextArea fx:id="breed" focusTraversable="false" layoutX="39.0" layoutY="275.0" prefHeight="38.0" prefWidth="254.0" promptText="Breed" />
+      <TextArea fx:id="age" focusTraversable="false" layoutX="39.0" layoutY="371.0" prefHeight="38.0" prefWidth="254.0" promptText="Age" />
+      <TextArea fx:id="vaccinated" focusTraversable="false" layoutX="39.0" layoutY="323.0" prefHeight="38.0" prefWidth="254.0" promptText="Vaccinated with VCAN1015" />
+      <TextArea fx:id="vetPoint" focusTraversable="false" layoutX="39.0" layoutY="419.0" prefHeight="38.0" prefWidth="254.0" promptText="Vet-point" />
+      <Button layoutX="39.0" layoutY="505.0" mnemonicParsing="false" onAction="#addClient" prefHeight="25.0" prefWidth="61.0" text="Add">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="136.0" layoutY="505.0" mnemonicParsing="false" onAction="#refreshButtonClick" prefHeight="25.0" prefWidth="61.0" text="Refresh">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="232.0" layoutY="505.0" mnemonicParsing="false" onAction="#cancelClick" prefHeight="25.0" prefWidth="61.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="resultArea" fontSmoothingType="LCD" layoutX="320.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="203.13671875">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

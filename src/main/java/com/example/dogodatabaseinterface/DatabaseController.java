@@ -23,38 +23,34 @@ public class DatabaseController {
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    private Stage stage2;
+    private Scene scene2;
+    private Parent root2;
     @FXML
     private TextArea firstName;
-
     @FXML
     private TextArea lastName;
     @FXML
     private TextArea phoneNumber;
-
     @FXML
     private TextArea city;
     @FXML
     private TextArea petName;
-
     @FXML
     private TextArea breed;
-
     @FXML
     private TextArea vaccinated;
     @FXML
     private TextArea age;
-
     @FXML
     private TextArea vetPoint;
     @FXML
     private TextArea resultArea;
     @FXML
     private Text text;
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
 
     public void searchClients() {
         String jdbcUrl =  "jdbc:mysql://localhost:3306/Userdb";
@@ -152,7 +148,10 @@ public class DatabaseController {
     private void logOutButtonClicked(ActionEvent event) throws IOException {
         switchToLoginInterface ( event );
     }
-
+    @FXML
+    private void addPetButtonClicked(ActionEvent event) throws IOException {
+       switchToAddPetInterface ( event );
+    }
     private void switchToLoginInterface( ActionEvent event) throws IOException {
         root = FXMLLoader.load ( getClass ().getResource ( "loginInterface.fxml" ) );
         stage = (Stage) ((Node) event.getSource ()).getScene ().getWindow ();
@@ -161,6 +160,16 @@ public class DatabaseController {
         stage.setScene ( scene );
         stage.centerOnScreen ();
         stage.show ();
+
+    }
+    private void switchToAddPetInterface( ActionEvent event) throws IOException {
+        root2 = FXMLLoader.load ( getClass ().getResource ( "addPetInterface.fxml" ) );
+        stage2 = (Stage) ((Node) event.getSource ()).getScene ().getWindow ();
+        stage2.setResizable ( false );
+        scene2 = new Scene ( root2 );
+        stage2.setScene ( scene2 );
+        stage2.centerOnScreen ();
+        stage2.show ();
 
     }
 }
