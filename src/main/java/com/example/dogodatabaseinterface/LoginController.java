@@ -1,7 +1,7 @@
 package com.example.dogodatabaseinterface;
 
 import javafx.animation.PauseTransition;
-import javafx.application.Application;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.w3c.dom.Text;
+
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static java.sql.DriverManager.getConnection;
+
 
 public class LoginController {
     private Stage stage;
