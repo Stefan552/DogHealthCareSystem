@@ -1,7 +1,6 @@
 package com.example.dogodatabaseinterface;
 
 import javafx.animation.PauseTransition;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,16 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
 
 public class LoginController {
     private Stage stage;
@@ -35,38 +30,30 @@ public class LoginController {
     private Stage stage3;
     private Scene scene3;
     private Parent root3;
+
     @FXML
     private Label resultText;
     @FXML
     private TextArea usernameTextArea;
-
     @FXML
     private TextArea passwordTextArea;
-
     @FXML
     private TextField usernameField;
-
     @FXML
     private TextField passwordField;
-
     @FXML
     private Button loginButton;
-
     @FXML
     private Label loginLabel1;
-
 
     @FXML
     private void loginButtonClicked ( ActionEvent event ) {
         String username = usernameField.getText ();
         String password = passwordField.getText ();
 
-        String jdbcURL = "jdbc:mysql://localhost:3306/Userdb";
-        String dbUsername = "root";
-        String dbPassword = "";
-
+        Database database=new Database ();
         try {
-            Connection connection = DriverManager.getConnection ( jdbcURL , dbUsername , dbPassword );
+            Connection connection = DriverManager.getConnection ( database.getJdbcUrl () , database.getUsername () , database.getPassword () );
 
             String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement statement = connection.prepareStatement ( sql );
@@ -121,10 +108,11 @@ public class LoginController {
         stage.centerOnScreen ();
         stage.show ();
     }
-
-    public void signUpMethod(ActionEvent event) throws IOException {
+    @FXML
+    private void signUpMethod(ActionEvent event) throws IOException {
         signupButtonClicked (  event);
 }
+
     @FXML
     private void signupButtonClicked ( ActionEvent event ) throws IOException {
 
@@ -139,16 +127,14 @@ public class LoginController {
         }
 
     @FXML
-    public void addUser(ActionEvent event) throws IOException {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/Userdb";
-        String dbUsername = "root";
-        String dbPassword = "";
+    private void addUser(ActionEvent event) throws IOException {
+        Database database=new Database ();
 
         String usernameInput = usernameTextArea.getText();
         String passwordInput = passwordTextArea.getText();
 
         try {
-            Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+            Connection connection = DriverManager.getConnection( database.getJdbcUrl (), database.getUsername (), database.getPassword ());
 
             String query = "INSERT INTO Users (username, password) VALUES (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -178,8 +164,6 @@ public class LoginController {
                     resultText.setText ( "" );
 
                 });pause1.play ();
-
-
             }
 
             preparedStatement.close();
@@ -192,7 +176,7 @@ public class LoginController {
     }
 
     @FXML
-    public void cancelButtonClicked(ActionEvent event) throws IOException {
+    private void cancelButtonClicked(ActionEvent event) throws IOException {
         switchbackInterface ( event );
     }
 

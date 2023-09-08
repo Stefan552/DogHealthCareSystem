@@ -11,7 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,6 +28,7 @@ public class DatabaseController {
     private Stage stage2;
     private Scene scene2;
     private Parent root2;
+
     @FXML
     private TextArea firstName;
     @FXML
@@ -52,13 +52,12 @@ public class DatabaseController {
     @FXML
     private Text text;
 
-    public void searchClients() {
-        String jdbcUrl =  "jdbc:mysql://localhost:3306/Userdb";
-        String username = "root";
-        String password = "";
 
+    @FXML
+    private void searchClients() {
+     Database database=new Database ();
         try {
-            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            connection = DriverManager.getConnection(database.getJdbcUrl (), database.getUsername (), database.getPassword ());
         } catch (SQLException e) {
             e.printStackTrace();
            text.setText ( "Database connection error: " + e.getMessage());
@@ -67,15 +66,11 @@ public class DatabaseController {
         String firstName1 = firstName.getText();
         String lastName1 = lastName.getText();
 
-
-
         try {
             String query = "SELECT * FROM Clients WHERE firstname = ? AND lastname = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1,   firstName1 );
             preparedStatement.setString(2,   lastName1 );
-
-
 
             resultSet = preparedStatement.executeQuery();
 
@@ -144,14 +139,17 @@ public class DatabaseController {
             }
         }
     }
+
     @FXML
     private void logOutButtonClicked(ActionEvent event) throws IOException {
         switchToLoginInterface ( event );
     }
+
     @FXML
     private void addPetButtonClicked(ActionEvent event) throws IOException {
        switchToAddPetInterface ( event );
     }
+
     private void switchToLoginInterface( ActionEvent event) throws IOException {
         root = FXMLLoader.load ( getClass ().getResource ( "loginInterface.fxml" ) );
         stage = (Stage) ((Node) event.getSource ()).getScene ().getWindow ();
@@ -162,6 +160,7 @@ public class DatabaseController {
         stage.show ();
 
     }
+
     private void switchToAddPetInterface( ActionEvent event) throws IOException {
         root2 = FXMLLoader.load ( getClass ().getResource ( "addPetInterface.fxml" ) );
         stage2 = (Stage) ((Node) event.getSource ()).getScene ().getWindow ();

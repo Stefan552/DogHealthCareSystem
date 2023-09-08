@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -55,12 +54,10 @@ public class AddPetController {
 
     @FXML
     public void addClient() {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/Userdb";
-        String username = "root";
-        String password = "";
 
+        Database database=new Database ();
         try {
-            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            connection = DriverManager.getConnection( database.getJdbcUrl (), database.getUsername (), database.getPassword ());
         } catch (SQLException e) {
             e.printStackTrace();
             resultArea.setText ("Database connection error: " + e.getMessage());
@@ -126,7 +123,8 @@ public class AddPetController {
             }
         }
     }
-@FXML
+
+    @FXML
     public void refreshButtonClick(){
 
         resultArea.setText("");
@@ -140,9 +138,12 @@ public class AddPetController {
         age.setText("");
         vetPoint.setText("");
 }
-public void cancelClick( Event event ) throws IOException {
+
+    @FXML
+    private void cancelClick( Event event ) throws IOException {
         switchToDtabaseInterface ( (ActionEvent) event );
 }
+
     private void switchToDtabaseInterface(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("databaseInterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
