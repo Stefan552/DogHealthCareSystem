@@ -61,7 +61,7 @@ public class DatabaseController {
             connection = DriverManager.getConnection(jdbcUrl, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Database connection error: " + e.getMessage());
+           text.setText ( "Database connection error: " + e.getMessage());
         }
 
         String firstName1 = firstName.getText();

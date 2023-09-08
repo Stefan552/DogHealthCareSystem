@@ -29,8 +29,8 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="89.0" layoutY="382.0" mnemonicParsing="false" onAction="#signupButtonClicked" prefHeight="30.0" prefWidth="152.0" text="Sign Up" />
-      <TextField fx:id="passwordField" alignment="CENTER" focusTraversable="false" layoutX="375.0" layoutY="130.0" opacity="0.65" prefWidth="187.0" promptText="Password" style="-fx-background-color: white;" text="password1">
+      <Button layoutX="89.0" layoutY="382.0" mnemonicParsing="false" onAction="#signUpMethod" prefHeight="30.0" prefWidth="152.0" text="Sign Up" />
+      <TextField fx:id="passwordField" alignment="CENTER" focusTraversable="false" layoutX="375.0" layoutY="130.0" opacity="0.65" prefWidth="187.0" promptText="Password" style="-fx-background-color: white;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -38,7 +38,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </TextField>
-      <TextField fx:id="usernameField" alignment="CENTER" focusTraversable="false" layoutX="375.0" layoutY="71.0" opacity="0.65" prefHeight="26.0" prefWidth="187.0" promptText="Username" style="-fx-background-color: white;" text="user1">
+      <TextField fx:id="usernameField" alignment="CENTER" focusTraversable="false" layoutX="375.0" layoutY="71.0" opacity="0.65" prefHeight="26.0" prefWidth="187.0" promptText="Username" style="-fx-background-color: white;">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
