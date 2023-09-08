@@ -1,4 +1,4 @@
-create database UserDB;
+usersbookscreate database UserDB;
 
 use UserDB;
 
@@ -66,3 +66,23 @@ VALUES
 
 
 SELECT* FROM clients;
+drop table users;
+
+SELECT* FROM users;
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users (username, password) VALUES
+('user1', 'password1');
+
+INSERT INTO users (username, password) VALUES
+('user2', 'password2');
+
+INSERT INTO users (username, password) VALUES
+('user3', 'password3');
+
+
